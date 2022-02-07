@@ -18,7 +18,7 @@ let EmailTemplate = ()=>{
             html: html,
             id: id
         }
-        axios.post('https://phishingtestapp.herokuapp.com/api/writeEmail',body).then(e=>{
+        axios.post('http://localhost:3000/api/writeEmail',body).then(e=>{
             alert('ss')
         })
     }

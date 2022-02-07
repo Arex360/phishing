@@ -1,7 +1,7 @@
 import Body from "./Body"
 import SideBar from "./SideBar"
 import {useState} from 'react'
-let Dashboard = ()=>{
+let Dashboard = ({fuser,firebase,organization})=>{
     let [compaign,setShowCompaign] = useState(false)
     let [user,setShowuser] = useState(false)
     let [email,setShowemail] = useState(false)
@@ -37,7 +37,7 @@ let Dashboard = ()=>{
     return (
         <div className="dash w-full h-screen flex z-50">
             <SideBar onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser}/>
-            <Body compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user}/>
+            <Body compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization}/>
         </div>
     )
 }

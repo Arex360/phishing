@@ -40,6 +40,7 @@ let Organization = ({user, firebase, tileClick})=>{
     let TileClickHandler = (e)=>{
         setSelectedOrg(e)
         setIsOrgSelected(true)
+        
     }
     let getOrg = ()=>{
         let s = user.email
@@ -63,7 +64,7 @@ let Organization = ({user, firebase, tileClick})=>{
         <div className="organization w-full h-screen flex justify-evenly items-center">
             {showMenu && <Card icon={faHome} title="My Organizations" onClick={showMyOrganizations}/>}
             {showMenu && <Card icon={faPlus} title="Create Organization" onClick={showCreateOganizationPanel}/>}
-            {isOrgSelected && <Dashboard/>}
+            {isOrgSelected && <Dashboard fuser={user} firebase={firebase} organization={selectedOrg}/>}
             {createOrganization && <div>
                 <div className="org flex" id="test">
                 <input onChange={e=>setOrganizationName(e.target.value)} placeholder="Enter Organization Name" className="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="email" type="text" autoFocus/>
