@@ -1,10 +1,10 @@
 import Compaign from "../sections/Compaign"
-import EmailTemplate from "../sections/Templates"
+import EmailTemplate, { LandingPageTemplate } from "../sections/Templates"
 import UserGroup from "../sections/UserSection"
 import Alert from "./alert"
 import Row from "./Row"
 
-let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,user,firebase,organization})=>{
+let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,landingPage,user,firebase,organization})=>{
     return (
         <div className="body w-5/6 h-full p-20 -z-10">
             {compaign && <Compaign/>}
@@ -12,6 +12,7 @@ let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,user,fireb
             {emailTemplate && <EmailTemplate/>}
             {sendingProfile && <Compaign/>}
             {settings && <Compaign/>}
+            {landingPage && <LandingPageTemplate/>}
         </div>
     )
 }
