@@ -18,7 +18,7 @@ let EmailTemplate = ()=>{
             html: html,
             id: id
         }
-        axios.post('https://phishingtestapp.herokuapp.com/api/writeEmail',body).then(e=>{
+        axios.post('/api/writeEmail',body).then(e=>{
             alert('ss')
         })
     }
@@ -47,7 +47,7 @@ let LandingPageTemplate = ()=>{
             html: html,
             id: id
         }
-        axios.post('https://phishingtestapp.herokuapp.com/api/webwrite',body).then(e=>{
+        axios.post('/api/webwrite',body).then(e=>{
             alert('ss')
         })
     }
