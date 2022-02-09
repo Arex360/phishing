@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer')
 
 export default function handler(req, res) {
+    let {to,body,title} = req.body
     var transport = nodemailer.createTransport({
         host: "smtp.gmail.com",
         port:  465,
@@ -10,11 +11,10 @@ export default function handler(req, res) {
         }
       });
       var mailOptions = {
-        from: '"Example Team" <from@example.com>',
-        to: 'eprogrammer786@gmail.com',
-        subject: 'Nice Nodemailer test',
-        text: 'Hey there, it’s our first message sent with Nodemailer ;) ',
-        html: '<b>Hey there! </b><br> This is our first message sent with Nodemailer',
+        from: '2018-uam-1274@mnsuam.edu.pk',
+        to: to,
+        subject: title,
+        html: body,
         dsn: {
             id: 't1',
             return: 'headers',
@@ -28,6 +28,6 @@ export default function handler(req, res) {
         }
         console.log('Message sent: %s', info.messageId);
 });
-    res.status(200).json({ name: 'John Doe' })
+    res.status(200).json({ msg: 'sent' })
   }
   

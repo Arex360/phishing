@@ -8,6 +8,7 @@ let Dashboard = ({fuser,firebase,organization})=>{
     let [profile,setShowprofile] = useState(false)
     let [setting,setShowsetting] = useState(false)
     let [landingPage,setShowLandingPage] = useState(false)
+    let [EmailPage,setShowEmailPage] = useState(false)
     let disableAll = ()=>{
         setShowCompaign(false)
         setShowuser(false)
@@ -15,6 +16,7 @@ let Dashboard = ({fuser,firebase,organization})=>{
         setShowprofile(false)
         setShowsetting(false)
         setShowLandingPage(false)
+        setShowEmailPage(false)
     }
     let enableCompaign = ()=>{
         disableAll()
@@ -40,10 +42,14 @@ let Dashboard = ({fuser,firebase,organization})=>{
         disableAll()
         setShowLandingPage(true)
     }
+    let enableSetEmailPage =()=>{
+        disableAll()
+        setShowEmailPage(true)
+    }
     return (
         <div className="dash w-full h-screen flex z-50">
-            <SideBar onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage}/>
-            <Body landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization}/>
+            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage}/>
+            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization}/>
         </div>
     )
 }

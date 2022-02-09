@@ -1,0 +1,186 @@
+Delivered-To: eprogrammer786@gmail.com
+Received: by 2002:a54:2587:0:0:0:0:0 with SMTP id v7csp6215320eco;
+        Mon, 7 Feb 2022 08:51:55 -0800 (PST)
+X-Google-Smtp-Source: ABdhPJztI7z30MyHlajeYkNaGwtoXvJwMNH8qcqxlQchCBzFk/r+HcxRJEDPQEhr1bpm/FDc1PKA
+X-Received: by 2002:a05:6870:5242:: with SMTP id o2mr168939oai.84.1644252715049;
+        Mon, 07 Feb 2022 08:51:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1644252715; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CsPN9Dn9YcNdIH257vQvzkv6A/rfClguCbNRkRVr0bIcamdl60C/c1JIRu88SbFY+k
+         g9B7E3LoZQKFhbPvTaeL7S8WBYMM0RZQxKNzpHDqdKEmT+NJS+s4j+3CPK2rJiO6t1kd
+         dZ5eVpDGLP3efWup20w0SNaUFJeqSQgAutT5uN0eoickp1XN9wcQzFFagFHYUi5kSyMK
+         xkS8KePKbyoif8GNFFDK10nRX5hd1IROYZVmPlow/QX633bDm8WYux7ovNfG6H9ST6R1
+         wnHAnO0xZBDlQLaR7eM4Jj8zm4XTJt/a8M7tqqfGeV0eMN+Z9CGuBx7f44T799oxbYV9
+         qEwg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:message-id:to:from:subject:mime-version
+         :date:sender:dkim-signature:dkim-signature;
+        bh=DjhAtKGD9J+HFinhc1afwoBDmFT4pyV3MSPsnm/GkXI=;
+        b=vYI+dAUTkNYZr2VVkJLn064b95ILALEr7o7h6oXej3ur+wU7qQxpPA4bcNeLArou4j
+         7ngUqVpxFa0SGKYmSAlVpd5wsd9OAATHNEDHdTV38eVFv19cyRtTzlesNUxwhA4SM0ws
+         Z6K6qG5F/G/u1LIoBL/AqJF24CglqvO6jtScr381GXIHvV279R5hQ3jEOPhuSL6AiZce
+         J1KOCH5bi3DIhwI7E/dMi60un2BeLiMSZZy3fm6pCSv7eoBRudf5tsKB3WRfyRom1G4y
+         INebRIhAVgE+l8qZzlpH6PZalRB30Vni8Dnhavd31zegIKfRCyQgNT42nzBL6jRKmSLS
+         316w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@canny.io header.s=mailo header.b=EXiJGsIv;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=CUxJEHYO;
+       spf=pass (google.com: domain of bounce+81bdd6.440fec-eprogrammer786=gmail.com@canny.io designates 159.135.233.204 as permitted sender) smtp.mailfrom="bounce+81bdd6.440fec-eprogrammer786=gmail.com@canny.io";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=canny.io
+Return-Path: <bounce+81bdd6.440fec-eprogrammer786=gmail.com@canny.io>
+Received: from m233-204.mailgun.net (m233-204.mailgun.net. [159.135.233.204])
+        by mx.google.com with UTF8SMTPS id r20si4724664oiw.135.2022.02.07.08.51.54
+        for <eprogrammer786@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 07 Feb 2022 08:51:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+81bdd6.440fec-eprogrammer786=gmail.com@canny.io designates 159.135.233.204 as permitted sender) client-ip=159.135.233.204;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@canny.io header.s=mailo header.b=EXiJGsIv;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=CUxJEHYO;
+       spf=pass (google.com: domain of bounce+81bdd6.440fec-eprogrammer786=gmail.com@canny.io designates 159.135.233.204 as permitted sender) smtp.mailfrom="bounce+81bdd6.440fec-eprogrammer786=gmail.com@canny.io";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=canny.io
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=canny.io; q=dns/txt; s=mailo; t=1644252714; h=Content-Type: Content-Transfer-Encoding: Message-Id: To: From: Subject: Mime-Version: Date: Sender: X-Feedback-Id; bh=DjhAtKGD9J+HFinhc1afwoBDmFT4pyV3MSPsnm/GkXI=; b=EXiJGsIvxR0z2/VDct5i0QZTQztQsLzv5pvwBcMN3KtotBCLEaayAQhNaA9nEuL1nl4PjX+a 90O/dbj6n+lBAA6sAVOlKFNe7GitqW2NFjS67IO8X73ChMcpqY69jWgzhEPBpDACV0Z3u+Wf PrbY3VITAov8pRcdp4N2ifwQfNU=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1644252714; h=Content-Type: Content-Transfer-Encoding: Message-Id: To: From: Subject: Mime-Version: Date: Sender: X-Feedback-Id; bh=DjhAtKGD9J+HFinhc1afwoBDmFT4pyV3MSPsnm/GkXI=; b=CUxJEHYO9fppiHj8k3AiZ5oZhVYTTU1T/hjedp+VlyHQzJg4ZvZz0n3MD8zGKVCOmTxDpu79 8wDmBT3ArCAtiJOEgTU2eKlYrsNI3nJ4EHcIKAlhWnZWfTAe3q/LZoH/HQTB+65N8Eihm9uK 9hg0gD6I5LEaPpeJYivgo14ShFc=
+X-Feedback-Id: 58916ca7cd1682221f9df703:mailgun
+X-Mailgun-Sending-Ip: 159.135.233.204
+X-Mailgun-Sid: WyI0MjQ5NiIsICJlcHJvZ3JhbW1lcjc4NkBnbWFpbC5jb20iLCAiNDQwZmVjIl0=
+Received: from <unknown> (<unknown> []) by api-n10.prod.us-east-1.postgun.com with HTTP id 62014e2a0ae862b7cf4df39f; Mon, 07 Feb 2022 16:51:54 GMT
+Sender: notifications@canny.io
+Date: Mon, 07 Feb 2022 16:51:54 +0000
+Mime-Version: 1.0
+Subject: New feedback this week for Expo
+From: Expo <notifications@canny.io>
+To: eprogrammer786@gmail.com
+Message-Id: <20220207165154.095fd08082f84f89@canny.io>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html lang=3D"en" xmlns=3D"http://www.w3.=
+org/1999/xhtml"><head><meta http-equiv=3D"Content-Type" content=3D"text/htm=
+l; charset=3Dutf-8"/><meta name=3D"viewport" content=3D"width=3Ddevice-widt=
+h, initial-scale=3D1.0"/><title>New feedback this week for Expo</title><sty=
+le type=3D"text/css">body, table, td, a, span { font-family: Helvetica Neue=
+, Helvetica, Arial, sans-serif !important; } a.cta {color: #fff !important;=
+text-decoration: none;}</style></head><body style=3D"width:100%;margin:0;pa=
+dding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%"><table wid=
+th=3D"100%" height=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0=
+" align=3D"left" valign=3D"top"><tbody><tr><td align=3D"center" valign=3D"t=
+op"><table width=3D"450" align=3D"center" cellPadding=3D"0" cellSpacing=3D"=
+0" style=3D"max-width:450px" border=3D"0" valign=3D"top"><tbody><span style=
+=3D"font-family:sans-serif;font-size:14px;line-height:14px;color:#000;displ=
+ay:none;max-height:0;overflow:hidden">4 new posts =C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=
+=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C=C2=A0=E2=80=8C</span><tr><td style=3D"=
+padding:40px 0 0 0"></td></tr><tr><td align=3D"center" style=3D"padding:0 1=
+0px 20px 10px"><img alt=3D"" src=3D"https://canny.io/images/20f1646e68396bc=
+f72d2180ce47fe350.png" width=3D"40" height=3D"40" style=3D"display:block;ou=
+tline:none;border:none;text-decoration:none;border-radius:40px"/></td></tr>=
+<tr><td align=3D"center" style=3D"padding:0 10px;line-height:24px"><span st=
+yle=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:20px=
+;font-weight:600;line-height:24px;color:#333">New feedback for Expo</span><=
+/td></tr><tr><td align=3D"center" style=3D"padding:5px 10px 0 10px;line-hei=
+ght:20px"><span style=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-se=
+rif;font-size:16px;line-height:20px;color:#999">See something you like? Vot=
+e=C2=A0on=C2=A0it!</span></td></tr><tr><td style=3D"padding:10px 0 0 0"></t=
+d></tr><tr><td style=3D"padding:40px 10px 0 10px;line-height:24px"><span st=
+yle=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px=
+;font-weight:bold;line-height:14px;color:#999;letter-spacing:0.1em;text-tra=
+nsform:uppercase">Feature Requests</span></td></tr><tr><td style=3D"padding=
+:0 10px;line-height:24px"><ul style=3D"margin:10px 0 0 0;padding:0"><li sty=
+le=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:16px;=
+line-height:20px;color:#666666;list-style-type:none;margin:10px 0 0 0"><a h=
+ref=3D"https://expo.canny.io/feature-requests/p/react-native-maps-0301?emai=
+lUserID=3D5d96ac161bb7063a3230a7f6&amp;emailAuthToken=3D5d99420b0d4ea6bf341=
+c771014b75795ef856dbe62626243aa53cd2ea564e6a8e7ff0fb1c15a38858738107c2559de=
+b2" target=3D"_blank" style=3D"color:#333;text-decoration:underline;font-fa=
+mily:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:15px;line-height:2=
+0px">react-native-maps 0.30.1</a></li><li style=3D"font-family:Helvetica Ne=
+ue,Helvetica,Arial,sans-serif;font-size:16px;line-height:20px;color:#666666=
+;list-style-type:none;margin:10px 0 0 0"><a href=3D"https://expo.canny.io/f=
+eature-requests/p/option-to-preserve-some-eas-builds-longer-than-30-days?em=
+ailUserID=3D5d96ac161bb7063a3230a7f6&amp;emailAuthToken=3D5d99420b0d4ea6bf3=
+41c771014b75795ef856dbe62626243aa53cd2ea564e6a8e7ff0fb1c15a38858738107c2559=
+deb2" target=3D"_blank" style=3D"color:#333;text-decoration:underline;font-=
+family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:15px;line-height=
+:20px">Option to preserve some EAS builds longer than 30 days</a></li><li s=
+tyle=3D"font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:16p=
+x;line-height:20px;color:#666666;list-style-type:none;margin:10px 0 0 0"><a=
+ href=3D"https://expo.canny.io/feature-requests/p/authsessionstartasync-sho=
+uld-support-useproxy-false?emailUserID=3D5d96ac161bb7063a3230a7f6&amp;email=
+AuthToken=3D5d99420b0d4ea6bf341c771014b75795ef856dbe62626243aa53cd2ea564e6a=
+8e7ff0fb1c15a38858738107c2559deb2" target=3D"_blank" style=3D"color:#333;te=
+xt-decoration:underline;font-family:Helvetica Neue,Helvetica,Arial,sans-ser=
+if;font-size:15px;line-height:20px">AuthSession.startAsync should support u=
+seProxy =3D false</a></li><li style=3D"font-family:Helvetica Neue,Helvetica=
+,Arial,sans-serif;font-size:16px;line-height:20px;color:#666666;list-style-=
+type:none;margin:10px 0 0 0"><a href=3D"https://expo.canny.io/feature-reque=
+sts/p/add-exposure-to-expo-camera?emailUserID=3D5d96ac161bb7063a3230a7f6&am=
+p;emailAuthToken=3D5d99420b0d4ea6bf341c771014b75795ef856dbe62626243aa53cd2e=
+a564e6a8e7ff0fb1c15a38858738107c2559deb2" target=3D"_blank" style=3D"color:=
+#333;text-decoration:underline;font-family:Helvetica Neue,Helvetica,Arial,s=
+ans-serif;font-size:15px;line-height:20px">Add exposure to expo-camera</a><=
+/li></ul></td></tr><tr><td style=3D"padding:50px 0 0 0"></td></tr><tr><td s=
+tyle=3D"border-top:1px solid #dddddd;padding:30px 0"><table align=3D"center=
+" cellSpacing=3D"5" cellPadding=3D"0" border=3D"0" valign=3D"top"><tbody><t=
+r><td align=3D"center"><span style=3D"font-family:sans-serif;font-size:14px=
+;line-height:14px;color:#000"><span style=3D"font-family:Helvetica Neue,Hel=
+vetica,Arial,sans-serif;font-size:12px;line-height:12px;color:#999">Powered=
+ by <a href=3D"https://canny.io" target=3D"_blank" style=3D"color:#666;text=
+-decoration:none">Canny</a></span><span style=3D"font-family:Helvetica Neue=
+,Helvetica,Arial,sans-serif;font-size:12px;line-height:12px;color:#666666">=
+=C2=A0=C2=B7=C2=A0</span><a href=3D"https://canny.io/privacy" target=3D"_bl=
+ank" style=3D"color:#999;text-decoration:none;font-family:Helvetica Neue,He=
+lvetica,Arial,sans-serif;font-size:12px">Privacy</a><span style=3D"font-fam=
+ily:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px;line-height:12=
+px;color:#666666">=C2=A0=C2=B7=C2=A0</span><a href=3D"https://canny.io/term=
+s" target=3D"_blank" style=3D"color:#999;text-decoration:none;font-family:H=
+elvetica Neue,Helvetica,Arial,sans-serif;font-size:12px">Terms</a></span></=
+td></tr><tr><td align=3D"center"><span style=3D"font-family:Helvetica Neue,=
+Helvetica,Arial,sans-serif;font-size:12px;line-height:12px;color:#999">831 =
+N Tatnall Street Suite M #140 Wilmington, DE 19801</span></td></tr><tr><td =
+align=3D"center"><span style=3D"font-family:sans-serif;font-size:14px;line-=
+height:14px;color:#000"><a href=3D"https://expo.canny.io/unsubscribe-report=
+?email=3Deprogrammer786%40gmail.com&amp;unsubscribeID=3Dbc890fba-79ea-00f4-=
+04c9-ed45bf193a04" target=3D"_blank" style=3D"color:#999;text-decoration:no=
+ne;font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px">I =
+don&#x27;t want these emails</a></span></td></tr></tbody></table></td></tr>=
+</tbody></table></td></tr></tbody></table></body></html>

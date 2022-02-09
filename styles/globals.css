@@ -38,3 +38,7 @@ textarea{
   width: 40%;
   height: 40px;
 }
+.email{
+  overflow: scroll;
+  height: 86%;
+}
