@@ -5,12 +5,12 @@ import {faHome,FaAdjust, FaHome, FaMailBulk, FaDashcube, FaPeopleArrows, FaInter
 import MaterialButton from "./MaterialButton"
 import {VscVmRunning,VscSettingsGear} from 'react-icons/vsc'
 import { useState } from 'react'
-let SideBar = ({onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail})=>{
+let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail})=>{
     return (
         <div className="bg-gray-900 mt-30 w-56 flex flex-col justify-between overflow-y-scroll  px-2  text-white text-xl gap-1 cursor-pointer">
            <div className="mid">
                <div className="py-10"></div>
-                <MenuItem Component={FaHome} title="Home" onClick={onCompaignClick}/>
+                <MenuItem Component={FaHome} title="Home" onClick={onHomePageClick}/>
                 <MenuItem Component={AiFillFund} title="Dashboard" onClick={onCompaignClick}/>
                 <MenuItem Component={FaPeopleArrows} title={'User & Groups'} expandable={true} onClick={onUserClick}>
                      <MenuItem Component={IoPersonAdd} title="Add User" onClick={onCompaignClick} overidable={true}/>

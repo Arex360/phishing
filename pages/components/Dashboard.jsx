@@ -9,6 +9,7 @@ let Dashboard = ({fuser,firebase,organization})=>{
     let [setting,setShowsetting] = useState(false)
     let [landingPage,setShowLandingPage] = useState(false)
     let [EmailPage,setShowEmailPage] = useState(false)
+    let [homepage,setShowHomePage] = useState(false)
     let disableAll = ()=>{
         setShowCompaign(false)
         setShowuser(false)
@@ -17,6 +18,7 @@ let Dashboard = ({fuser,firebase,organization})=>{
         setShowsetting(false)
         setShowLandingPage(false)
         setShowEmailPage(false)
+        setShowHomePage(false)
     }
     let enableCompaign = ()=>{
         disableAll()
@@ -46,12 +48,16 @@ let Dashboard = ({fuser,firebase,organization})=>{
         disableAll()
         setShowEmailPage(true)
     }
+    let enableSetHomePage=()=>{
+        disableAll()
+        setShowHomePage(true)
+    }
     useEffect(()=>{
     },[])
     return (
-        <div className="dash relative w-full h-screen flex ">
-            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage}/>
-            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization}/>
+        <div className="dash relative w-full h-screen  flex justify-between ">
+            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage}/>
+            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization} homepage={homepage}/>
         </div>
     )
 }
