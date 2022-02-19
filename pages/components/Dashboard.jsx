@@ -47,10 +47,9 @@ let Dashboard = ({fuser,firebase,organization})=>{
         setShowEmailPage(true)
     }
     useEffect(()=>{
-        alert(organization)
     },[])
     return (
-        <div className="dash w-full h-screen flex z-50">
+        <div className="dash relative w-full h-screen flex ">
             <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage}/>
             <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization}/>
         </div>

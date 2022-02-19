@@ -54,6 +54,7 @@ export default function Home() {
   }
   return (
     <div className={styles.container}>
+       <Nav/>
       {isOrganizatinSelected &&user && <Dashboard/>}
       {!isOrganizatinSelected && user &&<Organization user={user} firebase={firebase}/>}
       {!user && <NewLoginPage onEmailEnter={e=>setEmail(e.target.value)} onPasswordEnter={e=>setPassword(e.target.value)} onSingup={signUp} onSignIn={SignIn}/>}

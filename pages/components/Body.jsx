@@ -11,7 +11,7 @@ let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,landingPag
         alert(user)
     },[])
     return (
-        <div className="body w-5/6 h-full p-20 -z-10">
+        <div className="body w-5/6 h-full p-20">
             {compaign && <Compaign/>}
             {usergroup && <UserGroup user={user} firebase={firebase} organizationName={organization}/>}
             {sendEmail && <SendEmail user={user}/>}

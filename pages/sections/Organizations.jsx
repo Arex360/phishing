@@ -6,6 +6,7 @@ import Tile from "../components/Tile"
 import Dashboard from "../components/Dashboard"
 import Nav from "../components/Nav"
 import MaterialButton from "../components/MaterialButton"
+import { FaSearch } from "react-icons/fa"
 let Organization = ({user, firebase, tileClick})=>{
     let [createOrganization,setCreateOrganization] = useState(false)
     let [showOrganizations,setShowOrganizations] = useState(false)
@@ -64,22 +65,32 @@ let Organization = ({user, firebase, tileClick})=>{
         getOrg()
     },[])
     return(
-        <div className="div orgs">
-            <Nav createOrganization={PushOrganization} onSetOrganizationName={e=>setOrganizationName(e.target.value)}/>
-        <div className="organization w-full h-screen flex justify-evenly items-center">
-            {showMenu && false && <Card icon={faHome} title="My Organizations" onClick={showMyOrganizations}/>}
-            {showMenu && false && <Card icon={faPlus} title="Create Organization" onClick={showCreateOganizationPanel}/>}
-            {isOrgSelected && <Dashboard fuser={user} firebase={firebase} organization={selectedOrg}/>}
-            {createOrganization && <div>
-                <div className="org flex" id="test">
-                <input onChange={e=>setOrganizationName(e.target.value)} placeholder="Enter Organization Name" className="input border border-gray-400 appearance-none rounded w-full px-3 py-3 pt-5 pb-2 focus focus:border-indigo-600 focus:outline-none active:outline-none active:border-indigo-600" id="email" type="text" autoFocus/>
-                <button onClick={PushOrganization} className="w-1/3 text-white bg-gray-900">Create Organization</button>
-                 </div>
-                </div>}
-            {!isOrgSelected && <div className="w-full h-screen  mt-28  p-4">
-                {Tiles}
-                </div>}
-        </div>
+        <div className="div orgs block w-full absolute top-0">    
+           
+            {!isOrgSelected &&<div className="detail w-full absolute top-20 flex justify-between px-11 items-center">
+                <div className="left"><h1 className="text-3xl font-semibold">Project</h1></div>
+                <div className="right flex gap-1">
+                <div className="input flex items-center p-1 gap-2 border-solid border-2 border-x-gray-300">
+                 <FaSearch/>
+                 <input  className="outline-none" type="text" placeholder="Create Organization" />
+               </div>
+              <button onClick={createOrganization} className="bg-slate-800 text-white rounded-md py-2 px-3">Create Organization</button>
+                </div>
+            </div>}
+            {!isOrgSelected &&<div className="detail w-full absolute top-36 flex items-center px-11">
+                <div className="right flex gap-1">
+                <div className="input flex items-center p-1 gap-2 border-solid border-2 border-x-gray-300">
+                 <FaSearch/>
+                 <input  className="outline-none" type="text" placeholder="Create Organization" />
+               </div>
+                </div>
+            </div>}
+            <div className="organization w-full ">
+                {isOrgSelected && <Dashboard fuser={user} firebase={firebase} organization={selectedOrg}/>}
+                {!isOrgSelected && <div style={{width:'97%'}} className="mx-auto h-screen  mt-48  p-4">
+                    {Tiles}
+                    </div>}
+            </div>
         </div>
     )
 }
