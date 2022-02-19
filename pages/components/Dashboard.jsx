@@ -1,6 +1,6 @@
 import Body from "./Body"
 import SideBar from "./SideBar"
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 let Dashboard = ({fuser,firebase,organization})=>{
     let [compaign,setShowCompaign] = useState(false)
     let [user,setShowuser] = useState(false)
@@ -46,6 +46,9 @@ let Dashboard = ({fuser,firebase,organization})=>{
         disableAll()
         setShowEmailPage(true)
     }
+    useEffect(()=>{
+        alert(organization)
+    },[])
     return (
         <div className="dash w-full h-screen flex z-50">
             <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage}/>

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import Compaign from "../sections/Compaign"
 import SendEmail from "../sections/SendEmail"
 import EmailTemplate, { LandingPageTemplate } from "../sections/Templates"
@@ -6,6 +7,9 @@ import Alert from "./alert"
 import Row from "./Row"
 
 let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,landingPage,user,firebase,organization,sendEmail})=>{
+    useEffect(()=>{
+        alert(user)
+    },[])
     return (
         <div className="body w-5/6 h-full p-20 -z-10">
             {compaign && <Compaign/>}

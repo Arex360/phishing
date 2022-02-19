@@ -51,6 +51,7 @@ let UserGroup = ({user,firebase,organizationName})=>{
         })
     }
     useEffect(()=>{
+        alert(user)
         getUsersfromFireBase()
     },[])
     return (
