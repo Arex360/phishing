@@ -38,7 +38,7 @@ let Organization = ({user, firebase, tileClick,auth,signout})=>{
             isOwner: true
         }
         ref.set(org)
-        alert('created Organization')
+        alert(`created Organization: ${organizationName}`)
         window.location.reload()
     }
     let TileClickHandler = (e)=>{
@@ -72,16 +72,16 @@ let Organization = ({user, firebase, tileClick,auth,signout})=>{
                 <div className="right flex gap-1">
                 <div className="input flex items-center p-1 gap-2 border-solid border-2 border-x-gray-300">
                  <FaSearch/>
-                 <input  className="outline-none" type="text" placeholder="Create Organization" />
+                 <input onChange={(e)=>setOrganizationName(e.target.value)} className="outline-none" type="text" placeholder="Create Organization" />
                </div>
-              <button onClick={createOrganization} className="bg-slate-800 text-white rounded-md py-2 px-3">Create Organization</button>
+              <button onClick={PushOrganization} className="bg-slate-800 text-white rounded-md py-2 px-3">Create Organization</button>
                 </div>
             </div>}
             {!isOrgSelected &&<div className="detail w-full absolute top-36 flex items-center px-11">
                 <div className="right flex gap-1">
                 <div className="input flex items-center p-1 gap-2 border-solid border-2 border-x-gray-300">
                  <FaSearch/>
-                 <input  className="outline-none" type="text" placeholder="Create Organization" />
+                 <input  className="outline-none" type="text" placeholder="Search Organization" />
                </div>
                 </div>
             </div>}
