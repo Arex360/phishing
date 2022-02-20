@@ -7,7 +7,7 @@ import Dashboard from "../components/Dashboard"
 import Nav from "../components/Nav"
 import MaterialButton from "../components/MaterialButton"
 import { FaSearch } from "react-icons/fa"
-let Organization = ({user, firebase, tileClick})=>{
+let Organization = ({user, firebase, tileClick,auth,signout})=>{
     let [createOrganization,setCreateOrganization] = useState(false)
     let [showOrganizations,setShowOrganizations] = useState(false)
     let [showMenu,setShowMenu] = useState(true)
@@ -86,7 +86,7 @@ let Organization = ({user, firebase, tileClick})=>{
                 </div>
             </div>}
             <div className="organization w-full ">
-                {isOrgSelected && <Dashboard fuser={user} firebase={firebase} organization={selectedOrg}/>}
+                {isOrgSelected && <Dashboard fuser={user} firebase={firebase} organization={selectedOrg} auth={auth} signout={signout}/>}
                 {!isOrgSelected && <div style={{width:'97%'}} className="mx-auto h-screen  mt-48  p-4">
                     {Tiles}
                     </div>}

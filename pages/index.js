@@ -8,7 +8,7 @@ import Organization from './sections/Organizations'
 import Login from './sections/Login'
 import firebase from 'firebase/compat/app'
 import {useAuthState} from 'react-firebase-hooks/auth'
-import { getAuth, createUserWithEmailAndPassword , sendEmailVerification,signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword , sendEmailVerification,signInWithEmailAndPassword,signOut} from "firebase/auth";
 import 'firebase/compat/auth'
 import 'firebase/compat/database'
 import NewLoginPage from './sections/newLogin'
@@ -56,7 +56,7 @@ export default function Home() {
     <div className={styles.container}>
        <Nav/>
       {isOrganizatinSelected &&user && <Dashboard/>}
-      {!isOrganizatinSelected && user &&<Organization user={user} firebase={firebase}/>}
+      {!isOrganizatinSelected && user &&<Organization user={user} firebase={firebase} auth={auth} signout={signOut}/>}
       {!user && <NewLoginPage onEmailEnter={e=>setEmail(e.target.value)} onPasswordEnter={e=>setPassword(e.target.value)} onSingup={signUp} onSignIn={SignIn}/>}
    
     </div>

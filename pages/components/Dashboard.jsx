@@ -1,7 +1,7 @@
 import Body from "./Body"
 import SideBar from "./SideBar"
 import {useEffect, useState} from 'react'
-let Dashboard = ({fuser,firebase,organization})=>{
+let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
     let [compaign,setShowCompaign] = useState(false)
     let [user,setShowuser] = useState(false)
     let [email,setShowemail] = useState(false)
@@ -56,7 +56,7 @@ let Dashboard = ({fuser,firebase,organization})=>{
     },[])
     return (
         <div className="dash relative w-full h-screen  flex justify-between ">
-            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage}/>
+            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage} auth={auth} signout={signout}/>
             <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization} homepage={homepage}/>
         </div>
     )
