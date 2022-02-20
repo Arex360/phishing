@@ -5,7 +5,20 @@ import {faHome,FaAdjust, FaHome, FaMailBulk, FaDashcube, FaPeopleArrows, FaInter
 import MaterialButton from "./MaterialButton"
 import {VscVmRunning,VscSettingsGear} from 'react-icons/vsc'
 import { useState } from 'react'
+import firebase from 'firebase/compat/app'
+import {useAuthState} from 'react-firebase-hooks/auth'
+import { getAuth, signOut} from "firebase/auth";
 let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail})=>{
+    const app = firebase.initializeApp({
+        apiKey: "AIzaSyC8PAjtH7S7GeSlsETbpasTzWGaxgogNYc",
+        authDomain: "phishing-a3448.firebaseapp.com",
+        projectId: "phishing-a3448",
+        storageBucket: "phishing-a3448.appspot.com",
+        messagingSenderId: "246349650818",
+        appId: "1:246349650818:web:457b6a6d845ec5204dcd9b",
+        measurementId: "G-4ZLBYMV7Y1"
+      })
+      let auth = firebase.auth(app)
     return (
         <div className="bg-gray-900 mt-30 w-56 flex flex-col justify-between overflow-y-scroll  px-2  text-white text-xl gap-1 cursor-pointer">
            <div className="mid">
@@ -25,7 +38,9 @@ let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSend
                 <MenuItem Component={VscSettingsGear} title="Settings"/>
            </div>
            <div className="end">
-                <MenuItem Component={FaSignOutAlt} title="Logout"/>
+                <MenuItem onClick={()=>{
+                    signOut(auth)
+                }} Component={FaSignOutAlt}  title="Logout"/>
            </div>
         </div>
     )

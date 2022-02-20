@@ -1,8 +1,21 @@
-import { useState } from "react"
+import { useState ,useEffect} from "react"
 import MaterialButton from "../components/MaterialButton"
 import TextArea from "../components/TextArea"
-
+import firebase from 'firebase/compat/app'
+import {useAuthState} from 'react-firebase-hooks/auth'
+import { getAuth, signOut} from "firebase/auth";
 let MyHomePage = ()=>{
+    const app = firebase.initializeApp({
+        apiKey: "AIzaSyC8PAjtH7S7GeSlsETbpasTzWGaxgogNYc",
+        authDomain: "phishing-a3448.firebaseapp.com",
+        projectId: "phishing-a3448",
+        storageBucket: "phishing-a3448.appspot.com",
+        messagingSenderId: "246349650818",
+        appId: "1:246349650818:web:457b6a6d845ec5204dcd9b",
+        measurementId: "G-4ZLBYMV7Y1"
+      })
+      let auth = firebase.auth(app)
+      let [newuser] = useAuthState(auth)
     let [page1,showPage1] = useState(true)
     let [page2,showPage2] = useState(false)
     let disableAll = ()=>{
@@ -17,6 +30,9 @@ let MyHomePage = ()=>{
         disableAll()
         showPage2(true)
     }
+    useEffect(()=>{
+        let newApp = getAuth()
+    },[])
     return(
         <section className="text-gray-600 body-font h-screen overflow-scroll">
             <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
