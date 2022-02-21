@@ -16,7 +16,7 @@ let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSend
                <div className="py-10"></div>
                 <MenuItem Component={FaHome} title="Home" onClick={onHomePageClick}/>
                 <MenuItem Component={AiFillFund} title="Dashboard" onClick={onCompaignClick}/>
-                <MenuItem Component={FaPeopleArrows} title={'User & Groups'} expandable={true} onClick={onUserClick}>
+                <MenuItem Component={FaPeopleArrows} title={'Administration'} expandable={true} onClick={onUserClick}>
                      <MenuItem Component={IoPersonAdd} title="Add User" onClick={onCompaignClick} overidable={true}/>
                      <MenuItem Component={IoPeopleSharp} title="Add Group" onClick={onCompaignClick} overidable={true}/>
                      <MenuItem Component={IoShieldCheckmark} title="Add Roles" onClick={onCompaignClick} overidable={true}/>
