@@ -11,10 +11,10 @@ let Userpanel = ()=>{
     let [accounts,setAccounts] = useState([])
     useEffect(()=>{
         let account = [
-            <UserItem name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>,
-            <UserItem name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>,
-            <UserItem name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>,
-            <UserItem name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>
+            <UserItem key="1" name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>,
+            <UserItem key={"2"} name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>,
+            <UserItem key={"3"} name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>,
+            <UserItem key={"4"} name={"Ahsan"} email={"mhasan.ch786@gmail.com"} group={"test group"} role={"ceo"}/>
         ]
         setAccounts(account)
     },[])
