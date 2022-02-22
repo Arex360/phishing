@@ -16,8 +16,8 @@ let LearningHub = ()=>{
             <div className="line bg-gray-400 w-11/12 mx-auto h-2">
                 <div className="inner bg-gray-600 w-1/3 h-2"></div>
             </div>
-            <div className="line  w-11/12 mx-auto flex justify-between">
-                <div className="block1 w-1/3 flex flex-col gap-4">
+            <div className="line  w-11/12 mx-auto flex justify-between flex-col md:flex-row">
+                <div className="block1  w-11/12 md:w-1/3 flex flex-col gap-4">
                     <h1 className="text-4xl font-bold">Learning Path</h1>
                     <p>Accomplish security operation tasks with confidence and learn how to maximize protection across domains with curated collections of articles, videos, blogs and interactive guides</p>
                 </div>
