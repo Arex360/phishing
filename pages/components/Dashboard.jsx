@@ -10,6 +10,7 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
     let [landingPage,setShowLandingPage] = useState(false)
     let [EmailPage,setShowEmailPage] = useState(false)
     let [homepage,setShowHomePage] = useState(false)
+    let [learningHub,setShowLearningHub] = useState(false)
     let disableAll = ()=>{
         setShowCompaign(false)
         setShowuser(false)
@@ -19,6 +20,7 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
         setShowLandingPage(false)
         setShowEmailPage(false)
         setShowHomePage(false)
+        setShowLearningHub(false)
     }
     let enableCompaign = ()=>{
         disableAll()
@@ -52,12 +54,16 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
         disableAll()
         setShowHomePage(true)
     }
+    let enableLearningHub=()=>{
+        disableAll()
+        setShowLearningHub(true)
+    }
     useEffect(()=>{
     },[])
     return (
         <div className="dash relative w-full h-screen  flex justify-between ">
-            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage} auth={auth} signout={signout}/>
-            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization} homepage={homepage}/>
+            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage} onLearningHubClick={enableLearningHub} auth={auth} signout={signout}/>
+            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization} homepage={homepage} learningpage={learningHub} />
         </div>
     )
 }

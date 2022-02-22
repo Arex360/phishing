@@ -8,7 +8,7 @@ import { useState } from 'react'
 import firebase from 'firebase/compat/app'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { getAuth, signOut} from "firebase/auth";
-let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail,auth,signout})=>{
+let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail,onLearningHubClick,auth,signout})=>{
    
     return (
         <div className="bg-gray-900 mt-30 w-56 flex flex-col justify-between overflow-y-scroll  px-2  text-white text-xl gap-1 cursor-pointer">
@@ -25,7 +25,7 @@ let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSend
                 <MenuItem Component={FaMailBulk} title={"Email Templates"}/>
                 <MenuItem Component={IoCodeSharp} title="Website Templates"/>
                 <MenuItem Component={IoRadioOutline} title="Compaigns"/>
-                <MenuItem Component={VscVmRunning} title="Learning Hub"/>
+                <MenuItem Component={VscVmRunning} title="Learning Hub" onClick={onLearningHubClick}/>
                 <MenuItem Component={VscSettingsGear} title="Settings"/>
            </div>
            <div className="end">
