@@ -106,8 +106,8 @@ let AddUser = ()=>{
                            
                         </div>
                         <div className="mid flex flex-col gap-2">
-                            <button onClick={()=>AssignGroup()} className="bg-slate-500 text-white py-2 px-5">{`>`}</button>
-                            <button className="bg-slate-500 text-white py-2 px-5">{`<`}</button>
+                            <button onClick={()=>AssignGroup()} className="bg-slate-500 hover:bg-slate-900 duration-300 text-white py-2 px-5">{`>`}</button>
+                            <button className="bg-slate-500 text-white py-2 px-5 hover:bg-slate-900 duration-300">{`<`}</button>
                         </div>
                         <div className="right flex flex-col w-3/5 ">
                         <label>Assigned Groups</label>
@@ -151,9 +151,9 @@ let GroupCard = ({title,onClick})=>{
         onClick()
     }
      return(
-       <div className={`card bg-slate-200' flex items-center gap-2`}>
-           <input onClick={clickHandler} type="checkbox" name="" id="" />
-           <h1>{title}</h1>
+       <div className={`card bg-slate-200' flex items-center gap-2 group hover:bg-gray-800`}>
+           <input onClick={clickHandler} type="checkbox" className='cursor-pointer' id="" />
+           <h1 className='group-hover:text-white'>{title}</h1>
        </div>
     )
 }
