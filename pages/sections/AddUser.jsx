@@ -54,13 +54,13 @@ let AddUser = ()=>{
     },[])
     return(
         <section className="text-gray-600 body-font h-screen overflow-scroll py-14">
-            { form && <div className="card absolute flex flex-col gap-4 bg-slate-100 w-1/2 py-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
+            { form && <div className="card z-10 absolute flex flex-col gap-4 scale-50 md:scale-100 bg-slate-100 w-full md:w-1/2 py-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
                 <div className="row flex center text-2xl mt-3">
                      <h1 className="mx-auto">Import users from CSV</h1>
                 </div>
-                <div className="line w-full h-[0.5px] bg-gray-400"></div>
-                <div className="body w-11/12  mx-auto flex">
-                    <div className="left w-1/2 text-justify">
+                <div className="line w-full h-[0.5px] bg-gray-400 hidden md:block"></div>
+                <div className="body w-11/12  mx-auto flex flex-col md:flex-row">
+                    <div className="left md:w-1/2 w-full text-justify">
                         {`The csv imports new users requires settings of "name" and email", As optional fields you can add "manager email"
                         "exchange login" and groups'`}
                         <br />
@@ -89,7 +89,7 @@ let AddUser = ()=>{
                         </h1>
                     </div>
                 </div>
-                <div className="line w-full h-[0.5px] bg-gray-400"></div>
+                <div className="line w-full h-[0.5px] bg-gray-400 hidden md:block"></div>
                 <div className="footer flex items-center justify-end gap-4 w-11/12">
                     <button>Cancel</button>
                     <button className="bg-blue-500 text-white px-10 py-1">Add</button>
@@ -101,7 +101,7 @@ let AddUser = ()=>{
             </div>
             <div className="row1 w-full flex justify-center mt-3 flex-col gap-3">
                 <label className="mx-auto text-2xl">Add User</label>
-                <div className="line w-full h-1 bg-slate-600 scale-y-[0.2]"></div>
+                <div className="line w-full h-1 bg-slate-600 scale-y-[0.2] hidden md:block"></div>
             </div>
             <div className="body w-full flex justify-center items-center flex-col gap-3 mt-5">
                 <div className="form w-11/12 flex flex-col gap-3">
