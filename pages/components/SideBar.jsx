@@ -8,7 +8,7 @@ import { useState } from 'react'
 import firebase from 'firebase/compat/app'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { getAuth, signOut} from "firebase/auth";
-let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail,onLearningHubClick,auth,signout})=>{
+let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSendingClick,OnSettingsClick,onLandingPageClick,onSendEmail,onAddUser,onLearningHubClick,auth,signout})=>{
    
     return (
         <div className="bg-gray-900 mt-30 w-56 flex flex-col justify-between overflow-y-scroll  px-2  text-white text-xl gap-1 cursor-pointer">
@@ -17,7 +17,7 @@ let SideBar = ({onHomePageClick,onCompaignClick, onUserClick,onEmailClick,onSend
                 <MenuItem Component={FaHome} title="Home" onClick={onHomePageClick}/>
                 <MenuItem Component={AiFillFund} title="Dashboard" onClick={onCompaignClick}/>
                 <MenuItem Component={FaPeopleArrows} title={'Administration'} expandable={true} onClick={onUserClick}>
-                     <MenuItem Component={IoPersonAdd} title="Add User" onClick={onCompaignClick} overidable={true}/>
+                     <MenuItem Component={IoPersonAdd} title="Add User" onClick={onAddUser} overidable={true}/>
                      <MenuItem Component={IoPeopleSharp} title="Add Group" onClick={onCompaignClick} overidable={true}/>
                      <MenuItem Component={IoShieldCheckmark} title="Add Roles" onClick={onCompaignClick} overidable={true}/>
                 </MenuItem>

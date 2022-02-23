@@ -11,6 +11,7 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
     let [EmailPage,setShowEmailPage] = useState(false)
     let [homepage,setShowHomePage] = useState(false)
     let [learningHub,setShowLearningHub] = useState(false)
+    let [addUser,setAddUser] = useState(false)
     let disableAll = ()=>{
         setShowCompaign(false)
         setShowuser(false)
@@ -21,6 +22,7 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
         setShowEmailPage(false)
         setShowHomePage(false)
         setShowLearningHub(false)
+        setAddUser(false)
     }
     let enableCompaign = ()=>{
         disableAll()
@@ -58,12 +60,16 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
         disableAll()
         setShowLearningHub(true)
     }
+    let enableAddUser = ()=>{
+        disableAll()
+        setAddUser(true)
+    }
     useEffect(()=>{
     },[])
     return (
         <div className="dash relative w-full h-screen  flex justify-between ">
-            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage} onLearningHubClick={enableLearningHub} auth={auth} signout={signout}/>
-            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization} homepage={homepage} learningpage={learningHub} />
+            <SideBar onSendEmail={enableSetEmailPage} onCompaignClick={enableCompaign} OnSettingsClick={enableSettings} onEmailClick={enableEmail} onSendingClick={enableProfile} onUserClick={enableUser} onLandingPageClick={enableLandingPage} onHomePageClick={enableSetHomePage} onLearningHubClick={enableLearningHub} auth={auth} signout={signout} onAddUser={enableAddUser}/>
+            <Body sendEmail={EmailPage} landingPage={landingPage} compaign={compaign} emailTemplate={email} sendingProfile={profile} settings={setting} usergroup={user} firebase={firebase} user={fuser} organization={organization} homepage={homepage} learningpage={learningHub} addUser={addUser} />
         </div>
     )
 }

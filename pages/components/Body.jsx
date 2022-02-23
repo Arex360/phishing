@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import AddUser from "../sections/AddUser"
 import Compaign from "../sections/Compaign"
 import LearningHub from "../sections/LearningHub"
 import MyHomePage from "../sections/MyHomePage"
@@ -9,7 +10,7 @@ import UserGroup from "../sections/UserSection"
 import Alert from "./alert"
 import Row from "./Row"
 
-let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,landingPage,user,firebase,organization,sendEmail,homepage,learningpage})=>{
+let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,landingPage,user,firebase,organization,sendEmail,homepage,learningpage,addUser})=>{
     useEffect(()=>{
         alert(user)
     },[])
@@ -25,6 +26,7 @@ let Body = ({compaign,usergroup,emailTemplate,sendingProfile,settings,landingPag
             {landingPage && <LandingPageTemplate/>}
             {homepage && <MyHomePage/>}
             {learningpage && <LearningHub/>}
+            {addUser && <AddUser/>}
         </div>
     )
 }
