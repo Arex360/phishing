@@ -1,5 +1,56 @@
+import { useEffect, useState } from 'react'
 import {FaSearch} from 'react-icons/fa'
 let AddUser = ()=>{
+    let [availbleGroups,setAvailibleGroups] = useState([])
+    let [assignedGroups,setAssignedGroups] = useState([])
+    let [availbleGroupKeys,setAvailbleGroupKeys] = useState(['Group1','Group2','Group3','Group4'])
+    let [assignedGroupKeys,setAssignedGroupKeys] = useState([])
+    let [selectedgroup,setSelectedGroups] = useState([])
+    let PopulateAvailbleGroups = ()=>{
+        let groups = []
+        availbleGroupKeys.forEach(key=>{
+            groups.push(<GroupCard onClick={()=>{
+                selectedgroup.push(key)
+                setSelectedGroups(selectedgroup)
+            }} title={key} />)
+        })
+        setAvailibleGroups(groups)
+    }
+    let PopulateAssignedGroups = ()=>{
+        let groups = []
+        assignedGroupKeys.forEach(key=>{
+            groups.push(<GroupCard title={key}/>)
+        })
+        setAssignedGroups(groups)
+    }
+    let uncheckAll= ()=>{
+        let checkboxes = document.querySelectorAll('input[type="checkbox"]')
+        checkboxes.forEach(box=>{
+            box.checked = false
+        })
+    }
+    let AssignGroup = ()=>{
+        let groups = assignedGroupKeys
+        console.log(groups)
+        selectedgroup.forEach(g=>{
+            let fGroup = availbleGroupKeys.filter(n=> n == g)
+            fGroup.forEach(key=>{
+            groups.push(key)
+            })
+        })
+        selectedgroup.forEach(g=>{
+            availbleGroupKeys = availbleGroupKeys.filter(n => n != g)
+        })
+        setAvailbleGroupKeys(availbleGroupKeys)
+        setAssignedGroupKeys(groups)
+        console.log(assignedGroupKeys)
+        PopulateAvailbleGroups()
+        PopulateAssignedGroups()
+        uncheckAll()
+    }
+    useEffect(()=>{
+        PopulateAvailbleGroups()
+    },[])
     return(
         <section className="text-gray-600 body-font h-screen overflow-scroll py-14">
             <div className="row1 w-full bg-slate-200 shadow-md  p-5 mb-2">
@@ -50,10 +101,12 @@ let AddUser = ()=>{
                                                 <label>0</label>
                                             </div>
                                     </div>
+                                    {availbleGroups}
                             </div>
+                           
                         </div>
                         <div className="mid flex flex-col gap-2">
-                            <button className="bg-slate-500 text-white py-2 px-5">{`>`}</button>
+                            <button onClick={()=>AssignGroup()} className="bg-slate-500 text-white py-2 px-5">{`>`}</button>
                             <button className="bg-slate-500 text-white py-2 px-5">{`<`}</button>
                         </div>
                         <div className="right flex flex-col w-3/5 ">
@@ -74,6 +127,7 @@ let AddUser = ()=>{
                                                 <label>0</label>
                                             </div>
                                     </div>
+                                    {assignedGroups}
                             </div>
 
                         </div>
@@ -89,6 +143,18 @@ let AddUser = ()=>{
                 </div>
             </div>
         </section>
+    )
+}
+let GroupCard = ({title,onClick})=>{
+    let [selected,setSelected] = useState(false)
+    let clickHandler = ()=>{
+        onClick()
+    }
+     return(
+       <div className={`card bg-slate-200' flex items-center gap-2`}>
+           <input onClick={clickHandler} type="checkbox" name="" id="" />
+           <h1>{title}</h1>
+       </div>
     )
 }
 export default AddUser
