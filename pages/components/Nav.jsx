@@ -18,7 +18,7 @@ let Nav = ({createOrganization,onSetOrganizationName, active})=>{
           
         
         </div>
-        <h1>Company Name</h1>
+        <h1 id="companyname">Company Name</h1>
       </div>
       <div className="right flex items-center gap-2">
         

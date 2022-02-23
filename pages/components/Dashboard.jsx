@@ -65,6 +65,8 @@ let Dashboard = ({fuser,firebase,organization,auth,signout})=>{
         setAddUser(true)
     }
     useEffect(()=>{
+        let navorg = document.getElementById("companyname");
+        navorg.innerHTML = `PhishCode | ${organization}`
     },[])
     return (
         <div className="dash relative w-full h-screen  flex justify-between ">
