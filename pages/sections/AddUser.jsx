@@ -54,7 +54,7 @@ let AddUser = ()=>{
     },[])
     return(
         <section className="text-gray-600 body-font h-screen overflow-scroll py-14">
-            { form && <div className="card absolute flex flex-col gap-4 bg-slate-100 w-1/2 h-[50vh] top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
+            { form && <div className="card absolute flex flex-col gap-4 bg-slate-100 w-1/2 py-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
                 <div className="row flex center text-2xl mt-3">
                      <h1 className="mx-auto">Import users from CSV</h1>
                 </div>
