@@ -6,6 +6,7 @@ let AddUser = ()=>{
     let [availbleGroupKeys,setAvailbleGroupKeys] = useState(['Group1','Group2','Group3','Group4'])
     let [assignedGroupKeys,setAssignedGroupKeys] = useState([])
     let [selectedgroup,setSelectedGroups] = useState([])
+    let [form ,setForm] = useState(false)
     let PopulateAvailbleGroups = ()=>{
         let groups = []
         availbleGroupKeys.forEach(key=>{
@@ -53,6 +54,47 @@ let AddUser = ()=>{
     },[])
     return(
         <section className="text-gray-600 body-font h-screen overflow-scroll py-14">
+            { form && <div className="card absolute flex flex-col gap-4 bg-slate-100 w-1/2 py-10 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shadow-2xl">
+                <div className="row flex center text-2xl mt-3">
+                     <h1 className='mx-auto'>Import users from CSV</h1>
+                </div>
+                <div className="line w-full h-[0.5px] bg-gray-400"></div>
+                <div className="body w-11/12  mx-auto flex">
+                    <div className="left w-1/2 text-justify">
+                        The csv imports new users requires settings of 'name' and email', As optional fields you can add 'manager email'
+                        'exchange login' and groups
+                        <br />
+                        If you have users who are in several groups you can add additional 'group fields' allowed by a number , For example ,'group 1' and 'group 2'
+                        <br />
+                        As a formating example you can have a look at following examples
+                        <ul className='ml-10 mt-5'>
+                            <li className='list-disc'><a href="" className='text-blue-600'>Blank template with header</a></li>
+                            <li className='list-disc'><a href="" className='text-blue-600'>Template with example data</a></li>
+                        </ul>
+                    </div>
+                    <div className="mid"></div>
+                    <div className="right flex flex-col gap-2 w-1/2 p-4 border-l-[0.2px] ml-5 border-solid border-slate-500">
+                        <h1>CSV File <b className='text-red-600 text-2xl'>*</b></h1>
+                        <input type="file" className='w-full border-2 border-solid border-slate-500' />
+                        <div className="options flex items-center gap-2">
+                            <input type="checkbox" name="" id="" />
+                            <h2>Create new groups</h2>
+                        </div>
+                        <div className="options flex items-center gap-2">
+                            <input type="checkbox" name="" id="" />
+                            <h2>Give users access to login</h2>
+                        </div>
+                        <h1 className='font-bold'>Max file size is 2MB <br />
+                        CSV file should be utf-8 encoded
+                        </h1>
+                    </div>
+                </div>
+                <div className="line w-full h-[0.5px] bg-gray-400"></div>
+                <div className="footer flex items-center justify-end gap-4 w-11/12">
+                    <button>Cancel</button>
+                    <button className='bg-blue-500 text-white px-10 py-1'>Add</button>
+                </div>
+            </div>}
             <div className="row1 w-full bg-slate-200 shadow-md  p-5 mb-2">
                 <h1 className="text-3xl font-bold">PhishNode: Add Users</h1>
                 <hr />  
@@ -82,6 +124,7 @@ let AddUser = ()=>{
                             </select>
                         </div>
                     </div>
+                    <h1 className='text-blue-600 cursor-pointer' onClick={()=>setForm(true)}>import user through csv</h1>
                     <div className="r3 flex justify-between w-full items-center gap-4">
                         <div className="left flex flex-col w-3/5 ">
                             <label>Availible Groups</label>
