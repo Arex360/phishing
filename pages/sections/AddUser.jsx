@@ -103,7 +103,7 @@ let AddUser = ()=>{
                 <label className="mx-auto text-2xl">Add User</label>
                 <div className="line w-full h-1 bg-slate-600 scale-y-[0.2]"></div>
             </div>
-            <div className="body w-full flex justify-center items-center flex-col gap-3 mt-5">
+            <div className={"body w-full flex justify-center items-center flex-col gap-3 mt-5 "}>
                 <div className="form w-11/12 flex flex-col gap-3">
                     <div className="r1 flex justify-between">
                         <div className="field1 flex w-2/3  flex-col gap-1">
